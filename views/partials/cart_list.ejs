@@ -1,0 +1,17 @@
+<% if (products.length > 0) { %>
+  <ul class="list-group">
+    <% products.forEach((product) => { %> 
+      <li class="list-group-item">  
+        
+       <p style="font-weight: bold;"> <%= product['name'] %> </p>
+        <%= product['description'] %> 
+        <button type="submit" class="btn btn-danger float-end delete-item" data-doc="<%= product._id %>">  Delete from cart </button>
+      </li>
+
+      
+      <% }); %>
+  </ul>
+<% } else { %>
+
+  <h1 align = "center" style="margin-top: 100px;"> Empty cart :( </h1>
+  <% } %>

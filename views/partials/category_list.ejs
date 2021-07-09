@@ -1,0 +1,14 @@
+<% if (products.length > 0) { %>
+  <ul class="list-group">
+    <% products.forEach((product) => { %> 
+      <li class="list-group-item">  
+        
+       <p style="font-weight: bold;"> <%= product['name'] %> </p>
+        <%= product['description'] %> 
+        <button type="submit" class="btn btn-primary float-end add-cart" data-doc="<%= product._id %>"> Add item to cart</button>
+      </li>
+
+      
+      <% }); %>
+  </ul>
+<% } %>

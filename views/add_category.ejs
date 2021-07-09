@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header.ejs') %>
+
+<body>
+  
+  <%- include('partials/nav.ejs') %>
+
+  <h3 align = "center" style="padding-bottom: 70px; padding-top: 70px;">
+    Add a new product category
+  </h3>
+
+  <div>
+    
+
+    <form action="/add-category" method="POST">
+      <div class="form-floating mb-3">
+        <textarea class="form-control" placeholder="Leave a comment here" id="name" name = "name" style="height: 60px" required></textarea>
+        <label for="floatingTextarea2">Name </label>
+      </div>
+
+
+      <div class="form-floating mb-2 mr-sm-2">
+        <textarea class="form-control" placeholder="Leave a comment here" id="description" name = "description" style="height: 100px" required></textarea>
+        <label for="floatingTextarea2">Description </label>
+      </div>
+
+      <div align = "center">
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+    </form>  
+
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header.ejs') %>
+
+<body>
+  
+  <%- include('partials/nav.ejs') %>
+
+  <h1 align = "center"> My cart </h1>
+
+  <%- include('partials/cart_list.ejs') %>
+
+  <script>
+    const btns = document.querySelectorAll('button.delete-item');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const endpoint = `/item/${btn.dataset.doc}`;
+
+        fetch(endpoint , {
+          method : 'DELETE',
+        })
+          .then((response) => {
+            response.json()
+              .then((data) =>  window.location.href = data.redirect)
+            })
+          .catch((err) => console.log('error'));
+      });
+    });
+
+
+  </script>
+
+</body>
+</html>
